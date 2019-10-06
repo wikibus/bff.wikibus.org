@@ -1,0 +1,23 @@
+{
+  "name": "bff.wikibus.org",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Backend for frontend for wikibus.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wikibus/bff.wikibus.org.git"
+  },
+  "keywords": [
+    "wikibus"
+  ],
+  "author": "Tomasz Pluskiewicz <social@wikibus.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wikibus/bff.wikibus.org/issues"
+  },
+  "homepage": "https://github.com/wikibus/bff.wikibus.org#readme"
+}
