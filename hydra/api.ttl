@@ -1,0 +1,28 @@
+@base <http://localhost:16548/> .
+
+@prefix api: <https://api.wikibus.org/bff/> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix code: <https://code.described.at/> .
+@prefix hydra-box: <http://hydra-box.org/schema/> .
+
+<api> a hydra:ApiDocumentation ;
+  hydra:entrypoint <> ;
+  hydra:supportedClass api:Entrypoint .
+
+## Entrypoint
+
+api:Entrypoint a hydra:Class ;
+  hydra:title "Home resource of all wikibus.org APIs" ;
+  hydra:supportedOperation [
+    a hydra:SupportedOperation, hydra-box:View ;
+      hydra:title "Get the entrypoint resource" ;
+      hydra:method "GET" ;
+      code:implementedBy [
+        a code:EcmaScript ;
+        code:link <file:handlers/entrypoint#get>
+      ]
+  ] .
+
+## Routes
+
+<> a api:Entrypoint .
