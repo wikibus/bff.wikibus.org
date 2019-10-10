@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- '11'
+before_script:
+  - npm start & SERVER_PID=$!
+  - cp .env.default .env
+
+after_script:
+  - kill $SERVER_PID
