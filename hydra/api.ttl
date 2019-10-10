@@ -13,6 +13,10 @@
 
 api:Entrypoint a hydra:Class ;
   hydra:title "Home resource of all wikibus.org APIs" ;
+  hydra:supportedProperty [
+    hydra:property api:Library ;
+    hydra:title "Library"
+  ] ;
   hydra:supportedOperation [
     a hydra:SupportedOperation, hydra-box:View ;
       hydra:title "Get the entrypoint resource" ;
@@ -22,6 +26,8 @@ api:Entrypoint a hydra:Class ;
         code:link <file:handlers/entrypoint#get>
       ]
   ] .
+
+api:Library a hydra:Link .
 
 ## Routes
 
