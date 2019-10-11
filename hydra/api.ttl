@@ -14,7 +14,7 @@
 api:Entrypoint a hydra:Class ;
   hydra:title "Home resource of all wikibus.org APIs" ;
   hydra:supportedProperty [
-    hydra:property api:Library ;
+    hydra:property api:library ;
     hydra:title "Library"
   ] ;
   hydra:supportedOperation [
