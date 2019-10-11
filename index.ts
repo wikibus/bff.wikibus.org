@@ -1,7 +1,6 @@
 import cors from 'cors'
 import path from 'path'
 import hydraBox from 'hydra-box'
-import url from 'url'
 import express from 'express'
 import dotenv from 'dotenv'
 import dotenvExpand from 'dotenv-expand'
@@ -20,8 +19,6 @@ function hydraMiddleware () {
 
 Promise.resolve()
   .then(async () => {
-    const baseUrl = `${process.env.BASE_URI}`
-
     const app = express()
 
     app.use(
@@ -31,8 +28,8 @@ Promise.resolve()
     )
     app.use(await hydraMiddleware())
 
-    app.listen(new url.URL(baseUrl).port, () => {
-      console.log(`listening at ${baseUrl}`)
+    app.listen(process.env.PORT, () => {
+      console.log(`listening on port ${process.env.PORT}`)
     })
   })
   .catch(err => console.error(err))
