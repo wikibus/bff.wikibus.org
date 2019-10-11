@@ -1,5 +1,5 @@
 PREFIX api: <https://api.wikibus.org/bff/>
 
 With Class api:Entrypoint {
-  Expect Link api:Library
+  Expect Link api:library
 }
