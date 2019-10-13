@@ -27,6 +27,7 @@ Promise.resolve()
   .then(async () => {
     const app = express()
 
+    app.set('trust proxy', true)
     app.use(
       cors({
         exposedHeaders: ['link', 'location'],
