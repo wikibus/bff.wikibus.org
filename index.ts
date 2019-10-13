@@ -4,13 +4,19 @@ import hydraBox from 'hydra-box'
 import express from 'express'
 import dotenv from 'dotenv'
 import dotenvExpand from 'dotenv-expand'
+import $rdf from 'rdf-ext'
+import Parser from '@rdfjs/parser-n3'
+import { createReadStream } from 'fs'
 
 dotenvExpand(dotenv.config())
 
-function hydraMiddleware () {
-  return hydraBox.fromUrl(
-    '/api',
-    'file://' + path.join(__dirname, 'hydra/api.ttl'),
+const parser = new Parser({ baseIRI: process.env.BASE_URI })
+
+async function hydraMiddleware () {
+  const dataset = await $rdf.dataset()
+    .import(parser.import(createReadStream(path.join(__dirname, 'hydra/api.ttl'))))
+
+  return hydraBox('/api', dataset,
     {
       contextHeader: '/context/',
     }
