@@ -1,21 +1,22 @@
 @base <http://localhost:16548/> .
 
-@prefix api: <https://api.wikibus.org/bff/> .
+@prefix api: <https://wikibus.org/api#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix code: <https://code.described.at/> .
 @prefix hydra-box: <http://hydra-box.org/schema/> .
 
 <api> a hydra:ApiDocumentation ;
   hydra:entrypoint <> ;
-  hydra:supportedClass api:Entrypoint .
+  hydra:supportedClass api:EntryPoint .
 
 ## Entrypoint
 
-api:Entrypoint a hydra:Class ;
+api:EntryPoint a hydra:Class ;
   hydra:title "Home resource of all wikibus.org APIs" ;
   hydra:supportedProperty [
     hydra:property api:library ;
-    hydra:title "Library"
+    hydra:title "Library" ;
+    hydra:description "Public transport literature"
   ] ;
   hydra:supportedOperation [
     a hydra:SupportedOperation, hydra-box:View ;
@@ -27,8 +28,8 @@ api:Entrypoint a hydra:Class ;
       ]
   ] .
 
-api:Library a hydra:Link .
+api:library a hydra:Link .
 
 ## Routes
 
-<> a api:Entrypoint .
+<> a api:EntryPoint .
