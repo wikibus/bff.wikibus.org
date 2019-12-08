@@ -1,0 +1,9 @@
+name: wikibus-bff
+services:
+  api:
+    type: node
+    port: 16548
+    command: npm start
+proxy:
+  api:
+    - wikibus-bff.lndo.site:16548
