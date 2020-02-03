@@ -13,8 +13,11 @@ api:EntryPoint a hydra:Class ;
   hydra:title "Home resource of all wikibus.org APIs" ;
   hydra:supportedProperty [
     hydra:property api:library ;
-    hydra:title "Library" ;
-    hydra:description "Public transport literature"
+    hydra:title "Links to wikibus library"
+  ] ;
+  hydra:supportedProperty [
+    hydra:property api:dataSheets ;
+    hydra:title "Link to data sheets API"
   ] ;
   hydra:supportedOperation [
     a hydra:SupportedOperation, hydra-box:View ;
@@ -27,6 +30,7 @@ api:EntryPoint a hydra:Class ;
   ] .
 
 api:library a hydra:Link .
+api:dataSheets a hydra:Link .
 
 ## Routes
 
